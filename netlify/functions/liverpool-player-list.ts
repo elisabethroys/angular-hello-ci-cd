@@ -13,21 +13,6 @@ type LiverpoolPlayer = {
 
 
 const handler: Handler = async (event, context) => {
-  
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Content-Type': 'application/json',
-  };
-  
-  if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers: corsHeaders,
-      body: '',
-    };
-  }
 
   const liverpoolPlayers: LiverpoolPlayer[] = [
     { id: 1, jerseyNumber: 3, name: 'Wataru Endo', posision: 'Midfielder', age: 32, height: "5'10\"", weight: 76 },
@@ -69,8 +54,8 @@ const handler: Handler = async (event, context) => {
   
   return {
     statusCode: 200,
-    headers: corsHeaders,
     body: JSON.stringify(liverpoolPlayers),
+    headers: { 'Content-Type': 'application/json' },
   };
 };
 
