@@ -1,12 +1,6 @@
 <main>
   <h1>All liverpool players</h1>
   <h2>From {{ domain }}</h2>
-  
-  <ul>
-    <li *ngFor="let player of players">
-      <strong>#{{ player.jerseyNumber }}</strong> - {{ player.name }} ({{ player.posision }}) - Age: {{ player.age }}
-    </li>
-  </ul>
 
   <table>
     <thead>
@@ -19,41 +13,8 @@
         <th>Weight (kg)</th>
       </tr>
     </thead>
-    <tbody>
-      <tr><td>#3</td><td>Wataru Endo</td><td>Midfielder</td><td>32</td><td>5'10"</td><td>76</td></tr>
-      <tr><td>#4</td><td>Virgil Van Dijk</td><td>Defender</td><td>34</td><td>6'4"</td><td>92</td></tr>
-      <tr><td>#11</td><td>Mohamed Salah</td><td>Forward</td><td>33</td><td>5'8"</td><td>71</td></tr>
-      <tr><td>#1</td><td>Alisson</td><td>Goalkeeper</td><td>33</td><td>6'3"</td><td>91</td></tr>
-      <tr><td>#26</td><td>Andy Robertson</td><td>Defender</td><td>31</td><td>5'10"</td><td>64</td></tr>
-      <tr><td>#28</td><td>Freddie Woodman</td><td>Goalkeeper</td><td>28</td><td>6'2"</td><td>83</td></tr>
-      <tr><td>#2</td><td>Joe Gomez</td><td>Defender</td><td>28</td><td>6'2"</td><td>77</td></tr>
-      <tr><td>#21</td><td>Kostas Tsimikas</td><td>Defender</td><td>29</td><td>5'10"</td><td>77</td></tr>
-      <tr><td>#9</td><td>Alexander Isak</td><td>Forward</td><td>26</td><td>6'3"</td><td>70</td></tr>
-      <tr><td>#5</td><td>Ibrahima Konate</td><td>Defender</td><td>26</td><td>6'4"</td><td>84</td></tr>
-      <tr><td>#46</td><td>Rhys Williams</td><td>Defender</td><td>24</td><td>6'4"</td><td>82</td></tr>
-      <tr><td>#14</td><td>Federico Chiesa</td><td>Midfielder</td><td>28</td><td>5'8"</td><td>70</td></tr>
-      <tr><td>#18</td><td>Cody Gakpo</td><td>Forward</td><td>26</td><td>6'3"</td><td>76</td></tr>
-      <tr><td>#25</td><td>Giorgi Mamardashvili</td><td>Goalkeeper</td><td>25</td><td>6'5"</td><td>90</td></tr>
-      <tr><td>#8</td><td>Dominik Szoboszlai</td><td>Midfielder</td><td>25</td><td>6'1"</td><td>74</td></tr>
-      <tr><td>#10</td><td>Alexis Mac Allister</td><td>Midfielder</td><td>26</td><td>5'9"</td><td>70</td></tr>
-      <tr><td>#56</td><td>Vitezslav Jaros</td><td>Goalkeeper</td><td>24</td><td>6'1"</td><td>73</td></tr>
-      <tr><td>#63</td><td>Owen Beck</td><td>Defender</td><td>23</td><td>5'9"</td><td>-</td></tr>
-      <tr><td>#17</td><td>Curtis Jones</td><td>Midfielder</td><td>24</td><td>6'0"</td><td>81</td></tr>
-      <tr><td>#30</td><td>Jeremie Frimpong</td><td>Defender</td><td>24</td><td>5'7"</td><td>65</td></tr>
-      <tr><td>#38</td><td>Ryan Gravenberch</td><td>Midfielder</td><td>23</td><td>6'2"</td><td>77</td></tr>
-      <tr><td>#19</td><td>Harvey Elliott</td><td>Midfielder</td><td>22</td><td>5'8"</td><td>64</td></tr>
-      <tr><td>#47</td><td>Calvin Ramsey</td><td>Defender</td><td>22</td><td>-</td><td>-</td></tr>
-      <tr><td>#12</td><td>Conor Bradley</td><td>Defender</td><td>22</td><td>5'11"</td><td>76</td></tr>
-      <tr><td>#6</td><td>Milos Kerkez</td><td>Defender</td><td>22</td><td>5'9"</td><td>71</td></tr>
-      <tr><td>#7</td><td>Florian Wirtz</td><td>Midfielder</td><td>22</td><td>5'9"</td><td>71</td></tr>
-      <tr><td>#22</td><td>Hugo Ekitike</td><td>Forward</td><td>23</td><td>6'2"</td><td>76</td></tr>
-      <tr><td>#52</td><td>Isaac Mabaya</td><td>Midfielder</td><td>21</td><td>-</td><td>-</td></tr>
-      <tr><td>#43</td><td>Stefan Bajcetic</td><td>Defender</td><td>21</td><td>6'0"</td><td>76</td></tr>
-      <tr><td>#91</td><td>Luca Stephenson</td><td>Midfielder</td><td>22</td><td>5'11"</td><td>76</td></tr>
-      <tr><td>#41</td><td>Armin Pecsi</td><td>Goalkeeper</td><td>20</td><td>6'2"</td><td>-</td></tr>
-      <tr><td>#15</td><td>Giovanni Leoni</td><td>Defender</td><td>18</td><td>6'4"</td><td>76</td></tr>
-      <tr><td>#42</td><td>Treymaurice Nyoni</td><td>Midfielder</td><td>18</td><td>5'10"</td><td>75</td></tr>
-      <tr><td>#73</td><td>Rio Ngumoha</td><td>Forward</td><td>17</td><td>5'6"</td><td>75</td></tr>
+    <tbody *ngFor="let player of players">
+      <tr><td>#{{ player.jerseyNumber }}</td><td>{{ player.name }}</td><td>{{ player.posision }}</td><td>{{ player.age }}</td><td>{{ player.height }}</td><td>{{ player.weight }}</td></tr>
     </tbody>
   </table>
 </main>

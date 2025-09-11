@@ -13,16 +13,15 @@ type LiverpoolPlayer = {
 
 
 const handler: Handler = async (event, context) => {
-
   
   const corsHeaders = {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Content-Type': 'application/json',
-    };
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Content-Type': 'application/json',
+  };
   
-if (event.httpMethod === 'OPTIONS') {
+  if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
       headers: corsHeaders,
@@ -68,15 +67,11 @@ if (event.httpMethod === 'OPTIONS') {
   ];
 
   
-return {
+  return {
     statusCode: 200,
     headers: corsHeaders,
     body: JSON.stringify(liverpoolPlayers),
   };
-
-
-
-
 };
 
 export { handler };
