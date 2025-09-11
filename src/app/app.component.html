@@ -1,6 +1,13 @@
 <main>
   <h1>All liverpool players</h1>
   <h2>From {{ domain }}</h2>
+  
+  <ul>
+    <li *ngFor="let player of players">
+      <strong>#{{ player.jerseyNumber }}</strong> - {{ player.name }} ({{ player.posision }}) - Age: {{ player.age }}
+    </li>
+  </ul>
+
   <table>
     <thead>
       <tr>

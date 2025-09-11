@@ -1,5 +1,6 @@
 import { Handler } from '@netlify/functions';
 
+
 type LiverpoolPlayer = {
   id: number;
   jerseyNumber: number | null;
@@ -10,7 +11,25 @@ type LiverpoolPlayer = {
   weight: number | null;
 };
 
+
 const handler: Handler = async (event, context) => {
+
+  
+  const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Content-Type': 'application/json',
+    };
+  
+if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers: corsHeaders,
+      body: '',
+    };
+  }
+
   const liverpoolPlayers: LiverpoolPlayer[] = [
     { id: 1, jerseyNumber: 3, name: 'Wataru Endo', posision: 'Midfielder', age: 32, height: "5'10\"", weight: 76 },
     { id: 2, jerseyNumber: 4, name: 'Virgil Van Dijk', posision: 'Defender', age: 34, height: "6'4\"", weight: 92 },
@@ -48,12 +67,16 @@ const handler: Handler = async (event, context) => {
     { id: 34, jerseyNumber: 73, name: 'Rio Ngumoha', posision: 'Forward', age: 17, height: "5'6\"", weight: 75 },
   ];
 
-
-  return {
+  
+return {
     statusCode: 200,
+    headers: corsHeaders,
     body: JSON.stringify(liverpoolPlayers),
-    headers: { 'Content-Type': 'application/json' },
   };
+
+
+
+
 };
 
 export { handler };
